@@ -55,5 +55,4 @@ class CharactersListFragment : Fragment() {
 
         (viewDataBinding.viewModel as CharactersListViewModel).loadCharactersList()
     }
-
 }

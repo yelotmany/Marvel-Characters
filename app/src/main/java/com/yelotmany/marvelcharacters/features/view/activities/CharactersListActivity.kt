@@ -25,5 +25,4 @@ class CharactersListActivity: AppCompatActivity() {
             add<CharactersListFragment>(R.id.activity_characters_list_fragment)
         }
     }
-
 }

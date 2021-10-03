@@ -17,15 +17,15 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="@dimen/cardview_height"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="10dp"
         android:animateLayoutChanges="true"
+        android:onClick="@{() -> view_model.openCharacterDetails(character)}"
         app:cardCornerRadius="4dp"
-        app:cardElevation="8dp"
-        android:onClick="@{() -> view_model.openCharacterDetails(character)}">
+        app:cardElevation="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -42,8 +42,9 @@
                 android:id="@+id/card_character_avatar_image_view"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:scaleType="centerCrop"
                 android:contentDescription="@string/avatar_content_description"
+                android:scaleType="centerCrop"
+                application:avatar="@{character.imageURL}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/main_list_character_card_guide_line"
                 app:layout_constraintStart_toStartOf="parent"
@@ -60,48 +61,42 @@
 
                 <TextView
                     android:id="@+id/card_character_name_text_view"
+                    style="@style/LargeBoldText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    style="@style/LargeBoldText"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:text="@{character.name}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/card_character_author_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/card_character_description_text_view"
+                    style="@style/SmallLightText"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
                     android:layout_marginStart="16dp"
-                    style="@style/SmallText"
-                    android:text="@{character.author}"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="4"
+                    application:description="@{character.description}"
+                    app:layout_constraintBottom_toTopOf="@+id/card_character_more_info_text_view"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/card_character_name_text_view" />
 
                 <TextView
-                    android:id="@+id/card_character_description_text_view"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:ellipsize="end"
-                    android:maxLines="5"
-                    style="@style/SmallLightText"
-                    android:text="@{character.description}"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/card_character_author_text_view" />
-
-                <TextView
                     android:id="@+id/card_character_more_info_text_view"
+                    style="@style/MediumBoldText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="16dp"
                     android:text="@string/more_info"
-                    style="@style/MediumBoldText"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
@@ -110,11 +105,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
-                    app:srcCompat="@drawable/ic_read_more"
+                    android:contentDescription="@string/read_more_content_description"
                     app:layout_constraintBottom_toBottomOf="@+id/card_character_more_info_text_view"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/card_character_more_info_text_view"
-                    android:contentDescription="@string/read_more_content_description" />
+                    app:srcCompat="@drawable/ic_read_more" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

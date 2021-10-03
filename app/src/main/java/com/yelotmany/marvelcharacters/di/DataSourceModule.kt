@@ -1,7 +1,7 @@
 package com.yelotmany.marvelcharacters.di
 
-import com.yelotmany.marvelcharacters.features.model.repository.datasource.CharactersDataSource
-import com.yelotmany.marvelcharacters.features.model.repository.datasource.impl.MockDataSource
+import com.yelotmany.marvelcharacters.features.model.repository.datasource.remote.RemoteDataSource
+import com.yelotmany.marvelcharacters.features.model.repository.datasource.remote.rest.impl.RemoteDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -11,7 +11,7 @@ class DataSourceModule {
 
     @Singleton
     @Provides
-    fun provideMockDataSource(): CharactersDataSource{
-        return MockDataSource()
+    fun provideRemoteDataSource(): RemoteDataSource{
+        return RemoteDataSourceImpl()
     }
 }

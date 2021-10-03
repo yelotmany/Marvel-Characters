@@ -48,7 +48,7 @@ dependencies {
     implementation "androidx.activity:activity-ktx:$rootProject.activityVersion"
     implementation "androidx.fragment:fragment-ktx:$rootProject.fragmentVersion"
     implementation "com.squareup.picasso:picasso:$rootProject.picassoVersion"
-    implementation 'androidx.test.espresso:espresso-contrib:3.4.0'
+    implementation "androidx.test.espresso:espresso-contrib:$rootProject.espressoVersion"
 
     //dagger
     implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
@@ -56,9 +56,14 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
 
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
+
     testImplementation "junit:junit:$rootProject.junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$rootProject.androidJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
-    androidTestImplementation 'com.android.support.test:rules:1.0.2'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation "com.android.support.test:rules:$rootProject.supportTestVersion"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.supportTestVersion"
 }
