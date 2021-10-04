@@ -6,11 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.yelotmany.marvelcharacters.MarvelCharactersApplication
 import com.yelotmany.marvelcharacters.databinding.FragmentCharactersListBinding
+import com.yelotmany.marvelcharacters.features.model.entities.MarvelCharacter
 import com.yelotmany.marvelcharacters.features.view.CharactersAdapter
 import com.yelotmany.marvelcharacters.features.view.activities.CharactersListActivity
+import com.yelotmany.marvelcharacters.features.view.utils.NavigateToFragmentEvent
 import com.yelotmany.marvelcharacters.features.viewmodel.CharactersListViewModel
 import javax.inject.Inject
 
@@ -53,6 +57,16 @@ class CharactersListFragment : Fragment() {
         val charactersAdapter = CharactersAdapter(charactersListViewModel)
         viewDataBinding.fragmentCharactersListRecyclerView.adapter = charactersAdapter
 
-        (viewDataBinding.viewModel as CharactersListViewModel).loadCharactersList()
+        val viewModel = viewDataBinding.viewModel as CharactersListViewModel
+
+        viewModel.loadCharactersList()
+        viewModel.openCharacterEvent.observe(this.viewLifecycleOwner, NavigateToFragmentEvent {
+            openCharacterDetails(it)
+        })
+    }
+
+    private fun openCharacterDetails(character: MarvelCharacter?) {
+        val action = CharactersListFragmentDirections.actionCharactersListFragmentToCharacterDetailsFragment(character!!)
+        findNavController().navigate(action)
     }
 }

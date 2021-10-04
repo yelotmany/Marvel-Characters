@@ -5,18 +5,20 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.184375" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.125" />
+        <entry key="app/src/main/res/drawable/ic_description.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.11944444444444445" />
         <entry key="app/src/main/res/drawable/ic_read_more.xml" value="0.3109375" />
         <entry key="app/src/main/res/font/rubik.xml" value="0.325" />
         <entry key="app/src/main/res/layout/activity_characters_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16757246376811594" />
+        <entry key="app/src/main/res/layout/fragment_blank1.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_characters_list.xml" value="0.10916919959473151" />
         <entry key="app/src/main/res/layout/fragment_characters_list_error.xml" value="0.1" />
         <entry key="app/src/main/res/layout/main_list_character_card.xml" value="0.1921875" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -17,9 +17,23 @@
             android:layout_height="@dimen/toolbar_height"
             android:background="@color/grey_light"
             android:elevation="@dimen/toolbar_elevation"
+            app:title=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/nav_host_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_graph" />
 
             <TextView
                 android:id="@+id/toolbar_title"
@@ -34,7 +48,10 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/activity_characters_list_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"/>
 
 </LinearLayout>
