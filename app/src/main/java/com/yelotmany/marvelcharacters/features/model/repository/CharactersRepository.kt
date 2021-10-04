@@ -1,9 +1,8 @@
 package com.yelotmany.marvelcharacters.features.model.repository
 
-import androidx.lifecycle.MutableLiveData
-import com.yelotmany.marvelcharacters.features.model.entities.MarvelCharacter
+import com.yelotmany.marvelcharacters.features.model.repository.datasource.remote.rest.utils.RequestResult
 
 interface CharactersRepository {
 
-    fun loadMarvelCharactersList(): MutableLiveData<List<MarvelCharacter>?>
+    suspend fun loadMarvelCharactersList(): RequestResult
 }

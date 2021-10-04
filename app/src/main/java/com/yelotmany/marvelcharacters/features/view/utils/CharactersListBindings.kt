@@ -10,12 +10,15 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.yelotmany.marvelcharacters.R
-import com.yelotmany.marvelcharacters.features.model.entities.MarvelCharacter
+import com.yelotmany.marvelcharacters.features.model.repository.datasource.remote.rest.utils.RequestResult
 
 @BindingAdapter("application:items")
-fun setItems(listView: RecyclerView, items: List<MarvelCharacter>?) {
+fun setItems(listView: RecyclerView, requestResult: RequestResult?) {
 
-    (listView.adapter as CharactersAdapter).submitList(items ?: ArrayList<MarvelCharacter>())
+    if (requestResult == null || requestResult !is RequestResult.Success)
+        return
+
+    (listView.adapter as CharactersAdapter).submitList(requestResult.result)
 }
 
 @BindingAdapter("application:description")
@@ -34,10 +37,28 @@ fun setAvatar(imageView: ImageView, imageURL: String?) {
 }
 
 @BindingAdapter("application:progressBarVisibility")
-fun setProgressBarVisibility(progressBar: ProgressBar, visibility: MutableLiveData<Boolean>){
+fun setProgressBarVisibility(progressBar: ProgressBar, requestResult: MutableLiveData<RequestResult>){
 
-    val changeObserver = Observer<Boolean> { newValue ->
-       progressBar.visibility = if (newValue) View.VISIBLE else View.INVISIBLE
+    val changeObserver = Observer<RequestResult> { response ->
+       progressBar.visibility = if (response is RequestResult.Loading) View.VISIBLE else View.INVISIBLE
     }
-    visibility.observeForever(changeObserver)
+    requestResult.observeForever(changeObserver)
+}
+
+@BindingAdapter("application:listScreenVisibility")
+fun setListScreenVisibility(recyclerView: RecyclerView, requestResult: MutableLiveData<RequestResult>){
+
+    val changeObserver = Observer<RequestResult> { response ->
+        recyclerView.visibility = if (response is RequestResult.Success) View.VISIBLE else View.INVISIBLE
+    }
+    requestResult.observeForever(changeObserver)
+}
+
+@BindingAdapter("application:setScreenErrorVisibility")
+fun setScreenErrorVisibility(view: View, requestResult: MutableLiveData<RequestResult>){
+
+    val changeObserver = Observer<RequestResult> { response ->
+        view.visibility = if (response is RequestResult.Error) View.VISIBLE else View.INVISIBLE
+    }
+    requestResult.observeForever(changeObserver)
 }

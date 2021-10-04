@@ -2,10 +2,11 @@ package com.yelotmany.marvelcharacters.features.model.repository.datasource.remo
 
 import androidx.lifecycle.MutableLiveData
 import com.yelotmany.marvelcharacters.features.model.entities.MarvelCharacter
+import com.yelotmany.marvelcharacters.features.model.repository.datasource.remote.rest.utils.RequestResult
 
 interface RemoteDataSource {
 
     var items: MutableLiveData<List<MarvelCharacter>?>
 
-    fun loadDataFromServer()
+    suspend fun loadDataFromServer(): RequestResult
 }

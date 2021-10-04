@@ -1,35 +1,28 @@
 package com.yelotmany.marvelcharacters.features.viewmodel
 
-import androidx.databinding.Bindable
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.yelotmany.marvelcharacters.features.model.entities.MarvelCharacter
 import com.yelotmany.marvelcharacters.features.model.repository.CharactersRepository
+import com.yelotmany.marvelcharacters.features.model.repository.datasource.remote.rest.utils.RequestResult
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class CharactersListViewModel @Inject constructor(val charactersRepository: CharactersRepository):
     ViewModel(){
 
-    lateinit var items: MutableLiveData<List<MarvelCharacter>?>
-
-    lateinit var isLoading: MutableLiveData<Boolean>
-
-    var showMessageError = false
-
-    private val changeObserver = Observer<List<MarvelCharacter>?> { newValue ->
-        if (newValue.isNotEmpty())
-            isLoading.postValue(false)
-        else
-            showMessageError = true
-
-    }
+    lateinit var items: MutableLiveData<RequestResult>
 
     fun loadCharactersList(){
-        isLoading = MutableLiveData()
-        isLoading.postValue(true)
-        items = charactersRepository.loadMarvelCharactersList()
-        items.observeForever(changeObserver)
+
+        items = MutableLiveData()
+
+        items.postValue(RequestResult.Loading)
+        viewModelScope.launch(Dispatchers.IO){
+            items.postValue(charactersRepository.loadMarvelCharactersList())
+        }
     }
 
 

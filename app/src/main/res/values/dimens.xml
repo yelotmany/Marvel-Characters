@@ -3,4 +3,5 @@
     <dimen name="toolbar_height">60dp</dimen>
     <dimen name="toolbar_elevation">4dp</dimen>
     <dimen name="cardview_height">180dp</dimen>
+    <dimen name="screen_error_image_dim">100dp</dimen>
 </resources>

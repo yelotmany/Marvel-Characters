@@ -10,7 +10,8 @@ import javax.inject.Singleton
     modules = [
         ViewModelModule::class,
         RepositoryModule::class,
-        DataSourceModule::class
+        DataSourceModule::class,
+        ApiModule::class
     ])
 
 interface ApplicationComponent {
