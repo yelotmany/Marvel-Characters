@@ -9,4 +9,6 @@
     <string name="request_problem_title">Error</string>
     <string name="request_problem_subtitle">We have problem connecting with server</string>
     <string name="description_title">Description</string>
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search</string>
 </resources>

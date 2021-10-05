@@ -20,8 +20,8 @@
             android:id="@+id/fragment_characters_list_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            items="@{view_model.items}"
-            listScreenVisibility="@{view_model.items}"
+            items="@{view_model.currentItems}"
+            listScreenVisibility="@{view_model.currentItems}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,7 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
-            progressBarVisibility="@{view_model.items}"
+            progressBarVisibility="@{view_model.currentItems}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:indeterminateTint="@color/grey_dart"
@@ -42,7 +42,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            setScreenErrorVisibility="@{view_model.items}"
+            setScreenErrorVisibility="@{view_model.currentItems}"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_characters_list_recycler_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

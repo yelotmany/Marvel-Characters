@@ -1,15 +1,18 @@
 package com.yelotmany.marvelcharacters.features.view.activities
 
+import android.app.SearchManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
+import android.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.yelotmany.marvelcharacters.MarvelCharactersApplication
 import com.yelotmany.marvelcharacters.R
-import com.yelotmany.marvelcharacters.features.model.entities.MarvelCharacter
 
 class CharactersListActivity: AppCompatActivity() {
 

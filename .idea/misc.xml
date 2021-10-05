@@ -15,6 +15,8 @@
         <entry key="app/src/main/res/layout/fragment_characters_list.xml" value="0.10916919959473151" />
         <entry key="app/src/main/res/layout/fragment_characters_list_error.xml" value="0.1" />
         <entry key="app/src/main/res/layout/main_list_character_card.xml" value="0.1921875" />
+        <entry key="app/src/main/res/menu/option_menu.xml" value="0.19010416666666666" />
+        <entry key="app/src/main/res/xml/searchable.xml" value="0.19010416666666666" />
       </map>
     </option>
   </component>
