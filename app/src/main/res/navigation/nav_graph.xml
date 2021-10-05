@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/charactersListFragment">
+
+    <fragment
+        android:id="@+id/charactersListFragment"
+        android:name="com.yelotmany.marvelcharacters.features.view.fragments.CharactersListFragment"
+        android:label="" >
+        <action
+            android:id="@+id/action_charactersListFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="com.yelotmany.marvelcharacters.features.view.fragments.CharacterDetailsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_character_details" >
+        <argument
+            android:name="character"
+            app:argType="com.yelotmany.marvelcharacters.features.model.entities.MarvelCharacter" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_height">60dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="cardview_height">180dp</dimen>
+    <dimen name="screen_error_image_dim">100dp</dimen>
+    <dimen name="character_details_image_height">400dp</dimen>
+</resources>

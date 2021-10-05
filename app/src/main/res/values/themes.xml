@@ -1,0 +1,63 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MarvelCharacters" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/grey_light</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/grey_dart</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="AppTheme.TextView" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/rubik_regular</item>
+    </style>
+
+    <style name="SmallText" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/rubik_regular</item>
+    </style>
+
+    <style name="SmallLightText" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/rubik_light</item>
+    </style>
+
+    <style name="MediumText" parent="@android:style/TextAppearance.Medium">
+        <item name="android:fontFamily">@font/rubik_regular</item>
+    </style>
+
+    <style name="MediumBoldText" parent="@android:style/TextAppearance.Medium">
+        <item name="android:fontFamily">@font/rubik_bold</item>
+    </style>
+
+    <style name="largeText" parent="@android:style/TextAppearance.Large">
+        <item name="android:fontFamily">@font/rubik_regular</item>
+    </style>
+
+    <style name="LargeBoldText" parent="@android:style/TextAppearance.Large">
+        <item name="android:fontFamily">@font/rubik_bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="MarvelTitle" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/marvel</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">30sp</item>
+
+    </style>
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- Gets rid of the search icon -->
+        <item name="searchIcon">@drawable/ic_search</item>
+        <!-- Gets rid of the "underline" in the text -->
+        <item name="queryBackground">@color/white</item>
+        <!-- Gets rid of the search icon when the SearchView is expanded -->
+        <item name="searchHintIcon">@null</item>
+        <!-- The hint text that appears when the user has not typed anything -->
+        <item name="queryHint">@string/search_hint</item>
+    </style>
+
+    <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+</resources>
