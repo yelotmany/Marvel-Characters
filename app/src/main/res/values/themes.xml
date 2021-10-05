@@ -56,4 +56,8 @@
         <!-- The hint text that appears when the user has not typed anything -->
         <item name="queryHint">@string/search_hint</item>
     </style>
+
+    <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
 </resources>

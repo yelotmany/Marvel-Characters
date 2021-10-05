@@ -1,6 +1,5 @@
 package com.yelotmany.marvelcharacters.features.viewmodel
 
-import androidx.compose.ui.text.toUpperCase
 import androidx.lifecycle.*
 import com.yelotmany.marvelcharacters.features.model.entities.MarvelCharacter
 import com.yelotmany.marvelcharacters.features.model.repository.CharactersRepository
@@ -25,7 +24,6 @@ class CharactersListViewModel @Inject constructor(val charactersRepository: Char
             return
 
         currentItems = MutableLiveData()
-
 
         currentItems.postValue(RequestResult.Loading)
         viewModelScope.launch(Dispatchers.IO){

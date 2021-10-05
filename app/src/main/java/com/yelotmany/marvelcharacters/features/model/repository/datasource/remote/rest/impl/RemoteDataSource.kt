@@ -19,7 +19,7 @@ class RemoteDataSourceImpl @Inject constructor(private val apiService: ApiServic
         return try {
             val call = apiService.getCharacters()
             RequestResult.Success(
-                result = RemoteDataMapper.mapListCharacterRestModelToCharacter(call.body()?.data?.results)
+                result = RemoteDataMapper.mapListCharacterRestModelToCharacter(call.body()!!.data.results)
             )
         } catch (e: Exception) {
             RequestResult.Error(e)
