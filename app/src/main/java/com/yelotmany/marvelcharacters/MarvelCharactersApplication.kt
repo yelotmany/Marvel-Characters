@@ -1,9 +1,7 @@
 package com.yelotmany.marvelcharacters
 
 import android.app.Application
-import com.yelotmany.marvelcharacters.di.DaggerApplicationComponent
+import dagger.hilt.android.HiltAndroidApp
 
-class MarvelCharactersApplication: Application() {
-
-    val appComponent = DaggerApplicationComponent.create()
-}
+@HiltAndroidApp
+open class MarvelCharactersApplication: Application()

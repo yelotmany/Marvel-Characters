@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/charactersListFragment"
-        android:name="com.yelotmany.marvelcharacters.features.view.fragments.CharactersListFragment"
+        android:name="com.yelotmany.marvelcharacters.features.main.view.fragments.CharactersListFragment"
         android:label="" >
         <action
             android:id="@+id/action_charactersListFragment_to_characterDetailsFragment"
@@ -20,12 +20,12 @@
 
     <fragment
         android:id="@+id/characterDetailsFragment"
-        android:name="com.yelotmany.marvelcharacters.features.view.fragments.CharacterDetailsFragment"
+        android:name="com.yelotmany.marvelcharacters.features.main.view.fragments.CharacterDetailsFragment"
         android:label=""
         tools:layout="@layout/fragment_character_details" >
         <argument
             android:name="character"
-            app:argType="com.yelotmany.marvelcharacters.features.model.entities.MarvelCharacter" />
+            app:argType="com.yelotmany.marvelcharacters.features.main.model.entities.MarvelCharacter" />
     </fragment>
 
 </navigation>
