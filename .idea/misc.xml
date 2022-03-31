@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/layout/activity_characters_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16757246376811594" />
         <entry key="app/src/main/res/layout/fragment_blank1.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_character_details.xml" value="1.1102909222977553" />
         <entry key="app/src/main/res/layout/fragment_characters_list.xml" value="0.10916919959473151" />
         <entry key="app/src/main/res/layout/fragment_characters_list_error.xml" value="0.1" />
         <entry key="app/src/main/res/layout/main_list_character_card.xml" value="0.1921875" />

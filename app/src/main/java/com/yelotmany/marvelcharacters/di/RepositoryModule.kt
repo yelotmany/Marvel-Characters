@@ -1,18 +1,16 @@
 package com.yelotmany.marvelcharacters.di
 
-import com.yelotmany.marvelcharacters.features.model.repository.CharactersRepository
-import com.yelotmany.marvelcharacters.features.model.repository.datasource.remote.RemoteDataSource
-import com.yelotmany.marvelcharacters.features.model.repository.impl.CharactersRepositoryImpl
+import com.yelotmany.marvelcharacters.features.main.model.repository.CharactersRepository
+import com.yelotmany.marvelcharacters.features.main.model.repository.impl.CharactersRepositoryImpl
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
-import javax.inject.Singleton
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
 @Module
-class RepositoryModule {
+@InstallIn(SingletonComponent::class)
+abstract class RepositoryModule {
 
-    @Singleton
-    @Provides
-    fun provideRepository(dataSource: RemoteDataSource): CharactersRepository {
-        return CharactersRepositoryImpl(remoteDataSource = dataSource)
-    }
+    @Binds
+    abstract fun provideRepository(repository: CharactersRepositoryImpl): CharactersRepository
 }

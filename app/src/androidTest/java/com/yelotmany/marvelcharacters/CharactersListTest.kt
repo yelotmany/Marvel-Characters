@@ -13,8 +13,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 import androidx.test.runner.AndroidJUnit4
-import com.yelotmany.marvelcharacters.features.model.repository.impl.CharactersRepositoryImpl
-import com.yelotmany.marvelcharacters.features.view.activities.CharactersListActivity
+import com.yelotmany.marvelcharacters.features.main.view.activities.CharactersListActivity
 
 @RunWith(AndroidJUnit4::class)
 @LargeTest

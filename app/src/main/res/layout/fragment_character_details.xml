@@ -2,12 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".features.view.fragments.CharacterDetailsFragment">
+    tools:context=".features.main.view.fragments.CharacterDetailsFragment">
 
     <data>
         <variable
             name="character"
-            type="com.yelotmany.marvelcharacters.features.model.entities.MarvelCharacter" />
+            type="com.yelotmany.marvelcharacters.features.main.model.entities.MarvelCharacter" />
     </data>
 
     <ScrollView

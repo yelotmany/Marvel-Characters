@@ -9,7 +9,7 @@
         <import type="androidx.core.content.ContextCompat" />
         <variable
             name="view_model"
-            type="com.yelotmany.marvelcharacters.features.viewmodel.CharactersListViewModel" />
+            type="com.yelotmany.marvelcharacters.features.main.viewmodel.CharactersListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
